@@ -27,7 +27,6 @@
   
 
   .nav a.active {
-    background-color: #2196F3;
     color: white;
   }
   
@@ -83,7 +82,7 @@
 
     .searchbar:hover > .search_input{
     padding: 0 10px;
-    width: 450px;
+    width: 300px;
     caret-color:red;
     transition: width 0.4s linear;
     }
@@ -105,9 +104,14 @@
     text-decoration:none;
     }
 
-    #index {
-      background-color: lightgray;
-    }
+#index {
+  width: 100%;
+  height: auto;
+}
+
+.card {
+  width: 100%;
+}
 
   @media screen and (max-width: 600px) {
     .nav a, .nav input[type=text] {

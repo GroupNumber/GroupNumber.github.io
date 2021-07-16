@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/97796be164.js" crossorigin="anonymous"></script>
+
     <title>Home</title>
 </head>
 <body>
     <div class="nav">
-        <a class="active" href="#home"><img src="src/img/todolists_logo.png" alt="logo"></a>
-        <div class="container h-100">
+        <a class="active" href="#home"><i class="fas fa-list"></i></a>
+        <div class="container h-50">
             <div class="d-flex justify-content-center h-100">
               <div class="searchbar">
                 <input class="search_input" type="text" name="" placeholder="Search...">
@@ -24,17 +26,31 @@
             </div>
           </div>
       </div>
-      <section id="index">
-        <div class="d-flex flex-column bd-highlight mb-3 row-4">
-            <div class="p-2 bd-highlight"><a href="#">Today</a> </div>
-            <div class="p-2 bd-highlight"><a href="#">Important</a></div>
-            <div class="p-2 bd-highlight"><a href="#">Works</a></div>
-            <div class="p-2 bd-highlight"><a href="#">Personal</a></div>
-          </div>
-        <div class="d-flex flex-column bd-highlight mb-3 justify-content-end" id="sign-container">
+      <div id="index" class="d-flex flex-row">
+        <div>
+            <div class="p-2 bd-highlight"><a href="#">Today</a><i class="fas fa-calendar-week"></i></div>
+            <div class="p-2 bd-highlight"><a href="#">Important</a><i class="fas fa-star"></i></div>
+            <div class="p-2 bd-highlight"><a href="#">Works</a><i class="fas fa-briefcase"></i></div>
+            <div class="p-2 bd-highlight"><a href="#">Personal</a><i class="fas fa-user-tag"></i></div>
             <div class="p-2 bd-highlight"><a href="#">Sign in</a></div>
             <div class="p-2 bd-highlight"><a href="#">Login in</a></div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Today Tasks
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+
+                </li>
+                <li class="list-group-item">Hit the gym</li> 
+                <li class="list-group-item">Pay bills</li> 
+                <li class="list-group-item">Meet George</li> 
+                <li class="list-group-item">Buy eggs</li>  
+
+            </ul>
         </div>  
-      </section>
+    </div>
 </body>
 </html>
