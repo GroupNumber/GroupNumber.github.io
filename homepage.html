@@ -23,24 +23,44 @@
     <title>Home</title>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light navbar-expand-lg">
       <div class="container-fluid">
-        <a href="#home" class="navbar-brand"><i class="fas fa-list"></i></a>
-        <form class="d-flex">
-          <input
-            class="form-control me-2"
-            type="search"
-            aria-label="Search"
-            placeholder="Search"
-          />
-          <button class="btn btn-outline-light" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </form>
+        <a href="#home" class="navbar-brand">TO DO LISTS</a>
+        <button
+          class="navbar-toggler collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar"
+          aria-controls="navbarColor01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navabar-toggle-icon"><i class="fas fa-list"></i></span>
+        </button>
+        <div class="navbar-collapse collapse" id="navbar" style>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link ative" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          </ul>
+          <form class="d-flex">
+            <input
+              class="form-control me-2"
+              type="search"
+              aria-label="Search"
+              placeholder="Search"
+            />
+            <button class="btn btn-outline-light" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
       </div>
     </nav>
-    <div class="container-fluid row align-items-stretch">
-      <div class="list-group list-group-flush col-3">
+    <div class="container-fluid row align-items-stretch col-sm-12">
+      <div class="list-group list-group-flush col-md-3 col-sm-12">
         <li
           class="
             list-group-item list-group-item-action
@@ -63,7 +83,7 @@
         >
           <a href="#improtant"
             >Important<i class="fas fa-exclamation-circle"></i
-            ><span class="badge bg-danger rounded-pill">14</span></a
+            ><span class="badge bg-danger rounded-pill">8</span></a
           >
         </li>
         <li
@@ -93,13 +113,26 @@
         <li class="list-group-item"><a href="#signin">Sign in</a></li>
         <li class="list-group-item"><a href="#login">Login</a></li>
       </div>
-      <div class="card col-9">
+      <div class="card col-md-9 col-sm-12">
         <div class="card-header">Today Task</div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">2:00 p.m. meeting with Ben</li>
-          <li class="list-group-item">10:00 p.m. working in Home</li>
-          <li class="list-group-item">12:00 p.m. read book</li>
+          <li class="list-group-item list-group-item-action">
+            2:00 p.m. meeting with Ben
+          </li>
+          <li class="list-group-item list-group-item-action">
+            10:00 p.m. working in Home
+          </li>
+          <li class="list-group-item list-group-item-action">
+            12:00 p.m. read book
+          </li>
         </ul>
+        <!-- testing adding bar -->
+        <div class="add">
+          <input type="text" id="myInput" placeholder="Add Your Task" />
+          <span onclick="newElement()" class="addBtn"
+            ><i class="fas fa-plus"></i
+          ></span>
+        </div>
       </div>
     </div>
     <footer></footer>
