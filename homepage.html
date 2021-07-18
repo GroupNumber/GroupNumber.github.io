@@ -59,17 +59,19 @@
         </div>
       </div>
     </nav>
-    <div class="container-fluid row align-items-stretch col-sm-12">
-      <div class="list-group list-group-flush col-md-3 col-sm-12">
+    <div class="container-fluid row align-items-center col-sm-12">
+      <div class="list-group list-group-flush col-md-3 row-sm-12">
         <li
           class="
             list-group-item list-group-item-action
             justify-content-between
             align-items-center
+            col-sm-2
           "
         >
           <a href="#today"
-            >Today<i class="fas fa-calendar-week"
+            ><span class="d-none d-md-inline-block">Today</span
+            ><i class="fas fa-calendar-week"
               ><span class="badge bg-danger rounded-pill">14</span></i
             ></a
           >
@@ -79,10 +81,12 @@
             list-group-item list-group-item-action
             justify-content-between
             align-items-center
+            col-sm-2
           "
         >
           <a href="#improtant"
-            >Important<i class="fas fa-exclamation-circle"></i
+            ><span class="d-none d-md-inline-block">Important</span
+            ><i class="fas fa-exclamation-circle"></i
             ><span class="badge bg-danger rounded-pill">8</span></a
           >
         </li>
@@ -91,10 +95,12 @@
             list-group-item list-group-item-action
             justify-content-between
             align-items-center
+            col-sm-2
           "
         >
           <a href="#works"
-            >Works<i class="fas fa-briefcase"></i
+            ><span class="d-none d-md-inline-block">Works</span
+            ><i class="fas fa-briefcase"></i
             ><span class="badge bg-danger rounded-pill">2</span></a
           >
         </li>
@@ -103,34 +109,36 @@
             list-group-item list-group-item-action
             justify-content-between
             align-items-center
+            col-sm-2
           "
         >
           <a href="#personal"
-            >Personal<i class="fas fa-user"></i
+            ><span class="d-none d-md-inline-block">Personal</span
+            ><i class="fas fa-user"></i
             ><span class="badge bg-danger rounded-pill">3</span></a
           >
         </li>
-        <li class="list-group-item"><a href="#signin">Sign in</a></li>
-        <li class="list-group-item"><a href="#login">Login</a></li>
+        <li class="list-group-item"><a href="./Sign_In.html">Sign in</a></li>
+        <li class="list-group-item"><a href="./Login_in.html">Login</a></li>
       </div>
       <div class="card col-md-9 col-sm-12">
         <div class="card-header">Today Task</div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item list-group-item-action">
-            2:00 p.m. meeting with Ben
+            2:00 p.m. meeting with Ben work today
           </li>
           <li class="list-group-item list-group-item-action">
-            10:00 p.m. working in Home
+            10:00 p.m. working in Home home today
           </li>
           <li class="list-group-item list-group-item-action">
-            12:00 p.m. read book
+            12:00 p.m. read book personal next day
           </li>
         </ul>
         <!-- testing adding bar -->
         <div class="add">
           <input type="text" id="myInput" placeholder="Add Your Task" />
           <span onclick="newElement()" class="addBtn"
-            ><i class="fas fa-plus"></i
+            ><a href="./Task.html"><i class="fas fa-plus"></i></a
           ></span>
         </div>
       </div>
