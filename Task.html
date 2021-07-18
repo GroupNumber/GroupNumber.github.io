@@ -1,51 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="src/css/style-task.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/style-task.css" />
     <script
       src="https://kit.fontawesome.com/97796be164.js"
       crossorigin="anonymous"
     ></script>
     <title>Task</title>
-</head>
-<body>
-  <nav>
-    <a href="./homepage.html" class="back"><i class="fas fa-arrow-left"></i></a>
-    <h1 class="title">Task</h1>
-  </nav>
-    <div class="row">
-        <div class="col-75">
-          <div class="container">
-            <form action="#">
-              <div class="row">
-                <div class="col-50">
-                  <label for="Name"><i class="Name"></i>Title:</label>
-                  <input type="text" id="Name" name="Name" placeholder="Write down your title" required>
-                  <label for="Description"><i class="Description"></i>Description:</label>
-                  <input type="text" id="Description" name="Description" placeholder="Write down your description" required>
-                  <label for="AssignedTo">AssignedTo:</label>
-                  <select name="AssignedTo" id="AssignedTo" required>
-                      <option value="home">home</option>
-                      <option value="school">school</option>
-                      <option value="work">work</option>
-                    </select>
-                    <label for="date"> Duedate:</label>
-                    <input type="date" id="date" name="date"
-                           value="2021-07-15"
-                           min="2021-07-15" required>
-                           <label for="Status">Status:</label>
-                           <select name="Status" id="Status" required>
-                             <option value="ToDo">ToDo</option>
-                             <option value="inprogress">in progress</option>
-                             <option value="clear">clear</option>
-                           </select>
-              <input type="submit" value="ADD" class="submit">
-            </form>
-          </div>
-        </div>
+  </head>
+  <body>
+    <header>
+      <div>
+        <a href="./homepage.html" class="back"
+          ><i class="fas fa-arrow-left"></i
+        ></a>
       </div>
-</body>
+      <div><h1>Tasks</h1></div>
+    </header>
+
+    <form action="#">
+      <div class="container">
+        <label for="title">Title:</label>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="Write down your title"
+          required
+        />
+        <label for="description">Description:</label>
+        <input
+          type="text"
+          name="description"
+          id="description"
+          placeholder="Write down your description"
+        />
+        <label for="assigned">Assigned to:</label>
+        <select name="assigned" id="assigned">
+          <option value="home">Home</option>
+          <option value="school">School</option>
+          <option value="work">Work</option>
+        </select>
+        <label for="duedate">Duedate:</label>
+        <input
+          type="date"
+          name="duedate"
+          id="duedate"
+          value="2021-07-15"
+          min="2021-07-15"
+        />
+        <label for="status">Status:</label>
+        <select name="status" id="status">
+          <option value="todo">TO DO</option>
+          <option value="inprogress">IN PORGRESS</option>
+          <option value="clear">CLEAR</option>
+        </select>
+        <button type="submit">ADD</button>
+      </div>
+    </form>
+  </body>
 </html>
