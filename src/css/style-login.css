@@ -58,11 +58,16 @@ button:hover {
     top: 0px;
 }
 
+.titlecontainer i {
+    margin-right: 320px;
+}
+
 .container {
     padding: 16px;
 }
 
 .title {
+    margin-right: 150px;
     font-size: 50px;
     color: white;
 }
@@ -112,5 +117,11 @@ button:hover {
     }
     .mobile_titlecontainer .mobile_title {
         display: flex;
+    }
+    .mobile_titlecontainer i {
+        padding-right: 150px;
+    }
+    .mobile_title {
+        padding-right: 150px;
     }
 }
