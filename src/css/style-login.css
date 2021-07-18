@@ -13,7 +13,7 @@ a {
 }
 
 .login {
-    margin-top: 40%;
+    margin-top: 64px;
 }
 
 input[type=text],
@@ -86,7 +86,7 @@ button:hover {
         display: none;
     }
     .mobile_Login {
-        margin-top: 40%;
+        margin-top: 320px;
         display: flex;
         flex-direction: column;
         align-items: center;
