@@ -2,12 +2,13 @@ body {
   font-size: 18px;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: lightslategray;
 }
 
 header {
+  width: 100%;
   display: flex;
   background-color: lightgray;
-  top: 0px;
   justify-content: space-between;
   align-items: center;
 }
@@ -23,6 +24,7 @@ header {
   flex-flow: row wrap;
   background-color: skyblue;
   padding: 15px 20px;
+  margin: 20px 50px;
   border: 1px solid blue;
   border-radius: 5px;
 }
