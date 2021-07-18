@@ -12,9 +12,15 @@
 <body>
     <form action="action_page.php" class="desktop_action">
         <div class="container">
-            <h1>Register</h1>
+            <div class="container_head">
+                <a href="./homepage.html">
+                    <h1>Back_To_Top</h1>
+                </a>
+                <h1>Register</h1>
+            </div>
             <p>Please fill in this form to create an account.</p>
             <hr>
+
 
             <label for="email"><b>Email:</b></label>
             <input type="text" placeholder="Enter Email" name="email" id="email" required>
@@ -26,6 +32,7 @@
             <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
             <hr>
             <button type="submit" class="registerbtn">Register</button>
+            <button type="reset" class="resetbtn">reset</button>
         </div>
 
         <div class="container signin">
@@ -36,7 +43,12 @@
     <div class="mobile_register">
         <form action="action_page.php" class="mobile_action">
             <div class="mobile_container">
-                <h1>Register</h1>
+                <div class="mobile_container_head">
+                    <a href="./homepage.html">
+                        <h1>Back_To_Top</h1>
+                    </a>
+                    <h1>Register</h1>
+                </div>
                 <p>Please fill in this form to create an account.</p>
                 <hr>
 
@@ -50,10 +62,11 @@
                 <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
                 <hr>
                 <center><button type="submit" class="mobile_registerbtn">Register</button></center>
+                <center><button type="reset" class="mobile_resetbtn">reset</button></center>
             </div>
         </form>
         <div class="mobile_container_signin">
-            <p>Already have an account? <a href="#">LogIn</a>.</p>
+            <p>Already have an account? <a href="./Login in.html">LogIn</a>.</p>
         </div>
     </div>
 </body>
