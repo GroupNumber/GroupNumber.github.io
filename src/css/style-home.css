@@ -27,3 +27,16 @@ input {
 .addBtn:hover {
   background-color: lightgray;
 }
+
+.calender {
+  float: left;
+}
+
+footer {
+  height: 50px;
+  width: 100%;
+  border-top: lightblue solid 1px;
+  background-color: lightgray;
+  position: fixed;
+  bottom: 0;
+}
