@@ -4,214 +4,177 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/css/style-home.css" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap"
       rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
     />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
     <script
       src="https://kit.fontawesome.com/97796be164.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Home</title>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-light navbar-expand-lg">
-      <div class="container-fluid">
-        <a href="#home" class="navbar-brand">TO DO LISTS</a>
-        <button
-          class="navbar-toggler collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbar"
-          aria-controls="navbarColor01"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navabar-toggle-icon"><i class="fas fa-list"></i></span>
-        </button>
-        <div class="navbar-collapse collapse" id="navbar" style>
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link ative" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-          </ul>
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              aria-label="Search"
-              placeholder="Search"
-            />
-            <button class="btn btn-outline-light" type="submit">
-              <i class="fas fa-search"></i>
-            </button>
-          </form>
-        </div>
-      </div>
-    </nav>
-    <div class="container-fluid align-items-center col-sm-12 row">
-      <div class="list-group list-group-flush col-md-3 flex-md-column flex-row">
-        <li
-          class="
-            list-group-item list-group-item-action
-            justify-content-between
-            align-items-center
-          "
-        >
-          <a href="#today"
-            ><span class="d-none d-md-inline-block">Today</span
-            ><i class="fas fa-calendar-week"
-              ><span class="badge bg-danger rounded-pill">14</span></i
-            ></a
-          >
-        </li>
-        <li
-          class="
-            list-group-item list-group-item-action
-            justify-content-between
-            align-items-center
-          "
-        >
-          <a href="#improtant"
-            ><span class="d-none d-md-inline-block">Important</span
-            ><i class="fas fa-exclamation-circle"></i
-            ><span class="badge bg-danger rounded-pill">8</span></a
-          >
-        </li>
-        <li
-          class="
-            list-group-item list-group-item-action
-            justify-content-between
-            align-items-center
-          "
-        >
-          <a href="#works"
-            ><span class="d-none d-md-inline-block">Works</span
-            ><i class="fas fa-briefcase"></i
-            ><span class="badge bg-danger rounded-pill">2</span></a
-          >
-        </li>
-        <li
-          class="
-            list-group-item list-group-item-action
-            justify-content-between
-            align-items-center
-          "
-        >
-          <a href="#personal"
-            ><span class="d-none d-md-inline-block">Personal</span
-            ><i class="fas fa-user"></i
-            ><span class="badge bg-danger rounded-pill">3</span></a
-          >
-        </li>
-        <li class="list-group-item"><a href="./Sign_In.html">Sign in</a></li>
-        <li class="list-group-item"><a href="./Login_in.html">Login</a></li>
-      </div>
-      <div class="card col-md-9 col-sm-12">
-        <div class="card-header">Today Task</div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item list-group-item-action">
-            2:00 p.m. meeting with Ben work today
-          </li>
-          <li class="list-group-item list-group-item-action">
-            10:00 p.m. working in Home home today
-          </li>
-          <li class="list-group-item list-group-item-action">
-            12:00 p.m. read book personal next day
-          </li>
+    <div class="header">
+      <button class="sidebar-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+      <h1>TO DO LISTS</h1>
+    </div>
+    <div class="card">
+      <section class="card__header">
+        <h3>Thursday 7th</h3>
+        <h3>January 2020</h3>
+      </section>
+      <section class="card__body">
+        <ul class="card__body--days">
+          <li>mon</li>
+          <li>tue</li>
+          <li>wed</li>
+          <li>thu</li>
+          <li>fri</li>
+          <li>sat</li>
+          <li>sun</li>
         </ul>
-        <!-- testing adding bar -->
-        <div class="add">
-          <input type="text" id="myInput" placeholder="Add Your Task" />
-          <span onclick="newElement()" class="addBtn"
-            ><a href="./Task.html"><i class="fas fa-plus"></i></a
-          ></span>
-        </div>
+        <ul class="card__body--dates">
+          <li class="prev">30</li>
+          <li class="prev">31</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li class="active">7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+          <li>13</li>
+          <li>14</li>
+          <li>15</li>
+          <li class="circle orange">16 <span>5</span></li>
+          <li>17</li>
+          <li>18</li>
+          <li class="circle purple">19 <span>6</span></li>
+          <li>20</li>
+          <li>21</li>
+          <li>22</li>
+          <li>23</li>
+          <li>24</li>
+          <li>25</li>
+          <li>26</li>
+          <li>27</li>
+          <li>28</li>
+          <li>29</li>
+          <li>30</li>
+          <li>31</li>
+          <li class="next">1</li>
+          <li class="next">2</li>
+        </ul>
+      </section>
+      <div class="card__footer">
+        <p>11:35 am</p>
+        <a href="#" class="add">+</a>
+        <p>12<sup>o</sup> C</p>
       </div>
     </div>
-    <div class="container calender">
-      <div class="row">
-        <div class="span12">
-          <table class="table-condensed table-bordered table-striped">
-            <thead>
-              <tr>
-                <th colspan="7">
-                  <a class="btn"><i class="icon-chevron-left"></i></a>
-                  <a class="btn">july 2021</a>
-                  <a class="btn"><i class="icon-chevron-right"></i></a>
-                </th>
-              </tr>
-              <tr>
-                <th>Su</th>
-                <th>Mo</th>
-                <th>Tu</th>
-                <th>We</th>
-                <th>Th</th>
-                <th>Fr</th>
-                <th>Sa</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="muted">29</td>
-                <td class="muted">30</td>
-                <td class="muted">31</td>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-              </tr>
-              <tr>
-                <td>5</td>
-                <td>6</td>
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
-                <td>10</td>
-                <td>11</td>
-              </tr>
-              <tr>
-                <td>12</td>
-                <td>13</td>
-                <td>14</td>
-                <td>15</td>
-                <td>16</td>
-                <td>17</td>
-                <td><strong>18</strong></td>
-              </tr>
-              <tr>
-                <td>19</td>
-                <td>20</td>
-                <td>21</td>
-                <td>22</td>
-                <td>23</td>
-                <td>24</td>
-                <td>25</td>
-              </tr>
-              <tr>
-                <td>26</td>
-                <td>27</td>
-                <td>28</td>
-                <td>29</td>
-                <td class="muted">1</td>
-                <td class="muted">2</td>
-                <td class="muted">3</td>
-              </tr>
-            </tbody>
-          </table>
+    <div id='display-data-area'>
+      <form id='data-detail-form'>
+        <div id='data-${i}' class='data-field'>
+        <div class='id'>${data[i].id}</div>
+        <div class="name">${data[i].name}</div>
+        <div class="description">${data[i].description}</div>
+        <div class="assigned-to">${data[i].assignedto}</div>
+        <div class="due-date">${data[i].duedate}</div>
+        <div class="status">${data[i].status}</div>
+        <div class="button update" id="${data[i].id}">UPDATE</div>
+        <div class="button delete" id="${data[i].id}">DELETE</div>
         </div>
-      </div>
+    </form>
     </div>
-    <footer></footer>
+    <!-- sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="" alt="" />
+        <button class="close-btn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <!-- sidebar item -->
+      <div class="sidebar-item">
+        <li><a href="http://localhost:8080/"><i class="fas fa-home">HOME</i></a></li>
+        <li><i class="fas fa-exclamation-triangle">IMPORTANT</i></li>
+        <li><i class="fas fa-briefcase">WORK</i></li>
+        <li><i class="fas fa-calendar-week">TODAY</i></li>
+        <button id="show-btn">Show</button>
+        <button id="add-btn">ADD</button>
+      </div>
+      <!-- sign in button -->
+      <ul class="user-button links">
+        <li>
+          <i class="fas fa-sign-in-alt"><a href="#">SIGN IN</a></i>
+        </li>
+        <li>
+          <i class="fas fa-user-circle"><a href="#">LOG IN</a></i>
+        </li>
+      </ul>
+    </aside>
+
+    <div class='main-body'>
+      <div id='input-data-area'>
+          <form id='data-form' action="http://localhost:8080/" method="POST">
+            <input
+              type="text"
+              name="id"
+              id="id"
+              placeholder="ID"
+              required
+            />
+            <input type="text" name="name" placeholder="Name">
+            <input
+              type="text"
+              name="description"
+              id="description"
+              placeholder="Write down your description"
+            />
+            <label for="assignedto">Assigned to:</label>
+            <select name="assignedto" id="assignedto">
+              <option value="home">Home</option>
+              <option value="school">School</option>
+              <option value="work">Work</option>
+            </select>
+            <label for="duedate">Duedate:</label>
+            <input
+              type="date"
+              name="duedate"
+              id="duedate"/>
+            <label for="status">Status:</label>
+            <select name="status" id="status">
+              <option value="todo">TO DO</option>
+              <option value="inprogress">IN PORGRESS</option>
+              <option value="clear">CLEAR</option>
+            </select>
+            <button type="submit">ADD</button>
+          </form>
+      </div>
+      <div id='display-data-area'>
+        <form id='data-detail-form'>
+          <div id='data-${i}' class='data-field'>
+          <div class='id'>${data[i].id}</div>
+          <div class="name">${data[i].name}</div>
+          <div class="description">${data[i].description}</div>
+          <div class="assigned-to">${data[i].assignedto}</div>
+          <div class="due-date">${data[i].duedate}</div>
+          <div class="status">${data[i].status}</div>
+          <div class="button update" id="${data[i].id}">UPDATE</div>
+          <div class="button delete" id="${data[i].id}">DELETE</div>
+          </div>
+      </form>
+      </div>
+  </div>
+    <script src="./app.js"></script>
   </body>
 </html>

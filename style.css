@@ -1,0 +1,333 @@
+/* calendar */
+.card {
+  background: #ffffff;
+  position: relative;
+  top: 8rem;
+  width: 90%;
+  max-width: 40rem;
+  min-height: 40rem;
+  display: grid;
+  grid-template-rows: 8rem auto 10rem;
+  box-shadow: 0 1rem 2.5rem rgb(27, 64, 94);
+}
+
+.card__header, .card__footer {
+    padding: 0 1.25rem;
+    color: #7d8994;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+.card__body {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.card__body--days {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 4rem;
+}
+.card__body--days li {
+        flex: 1;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        color: #7d8994;
+        margin: 0 1px;
+      }
+    
+.card__body--dates {
+      display: grid;
+      gap: 3px;
+      grid-template-columns: repeat(7, 1fr);
+      justify-items: center;
+      text-align: center;
+}
+.card__body--dates li {
+        width: 3.5rem;
+        height: 3.5rem;
+        display: grid;
+        place-items: center;
+        font-weight: bold;
+        position: relative;
+      }
+      .card__body--dates  li.prev,
+      .card__body--dates  li.next {
+        color: #ccc;
+      }
+      .card__body--dates  li.active {
+        background: #de6e46;
+        color: #ffffff;
+        border-radius: 50%;
+      }
+      .card__body--dates  li.circle {
+        border: 2px solid;
+        border-radius: 50%;
+      }
+.card__body--dates  li.circle  span {
+          position: absolute;
+          top: -0.75rem;
+          right: -0.5rem;
+          width: 1.75rem;
+          height: 1.75rem;
+          font-size: 1.2rem;
+          color: #ffffff;
+          border-radius: 50%;
+}
+      
+.circle.orange {
+        border-color: #de6e46;
+}
+.circle.orange span {
+          background: #de6e46;
+        }
+      
+.circle.purple {
+        border-color: #ae5989;
+}
+.circle.purple  span {
+          background: #ae5989;
+        }
+
+.card__footer .add {
+      text-decoration: none;
+      color: inherit;
+      border: 2px solid #de6e46;
+      border-radius: 50%;
+      width: 3.5rem;
+      height: 3.5rem;
+      padding-top: 0.25rem;
+      display: grid;
+      place-items: center;
+    }
+
+
+/* gobal styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+  background: hsl(212, 33%, 89%);
+  color: black;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+.header {
+  width: 100%;
+  height: 5rem;
+  background: cornflowerblue;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+form {
+  margin-top: 2rem;
+  min-height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+}
+
+form input, form button,button,label,select {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+
+form button {
+  color: #d88771;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3 ease;
+}
+
+form button:hover {
+  background: #d88771;
+  color: white;
+
+}
+
+form#data-detail-form {
+  width: 100%;
+  border: solid whitesmoke 2px;
+  border-radius: 5cm;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5 rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* sidebar styles */
+.sidebar-toggle {
+  position: relative;
+  left: 2.5rem;
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  color: hsl(205, 78%, 60%);
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.sidebar-toggle:hover {
+  color: hsl(205, 90%, 76%);
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.close-btn {
+  font-size: 1.75rem;
+  background: transparent;
+  border-color: transparent;
+  color: hsl(205, 78%, 60%);
+  transition: all 0.3s linear;
+  cursor: pointer;
+  color: hsl(360, 67%, 44%);
+}
+.close-btn:hover {
+  color: hsl(360, 71%, 66%);
+  transform: rotate(150deg);
+}
+
+.links i,.sidebar-item i,.sidebar-item button {
+  display: block;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  padding: 1rem 1.5rem;
+  color: hsl(210, 22%, 49%);
+  transition: all 0.3s linear;
+}
+
+.links i:hover,.sidebar-item i:hover,.sidebar-item button:hover {
+  background: hsl(205, 86%, 81%);
+  color: hsl(205, 78%, 60%);
+  padding-left: 1.75rem;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  grid-template-rows: auto 1fr auto;
+  row-gap: 1rem;
+  box-shadow: hsl(360, 67%, 44%);
+  transition: all 0.3s linear;
+  transform: translate(-100%);
+}
+
+.show-sidebar {
+  transform: translate(0) !important;
+}
+
+.data-field {
+  display: flex;
+}
+
+.data-field div {
+  width: 150px;
+  height: 60px;
+}
+
+.data-header div {
+  position: relative;
+  margin: 2rem 2.5rem;
+}
+
+#data-form {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  width: 100%;
+}
+
+#data-heading {
+  width: auto;
+  height: 20px;
+  text-align: center;
+  background: rgba(243, 225, 225, 0.493);
+}
+
+#update-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#input-data-area {
+  position: absolute;
+  width: 30rem;
+  left: 25rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  background-color: slateblue;
+  opacity: 0.5;
+}
+
+#input-data-area #data-form {
+  background-color: slateblue;
+}
+
+.display-data-area {
+  position: relative;
+  top: 28px;
+
+}
+
+#data-detail-form {
+  padding: 2rem;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+  font-size: xx-large;
+  
+}
+
+@media screen and (min-width: 676px) {
+  .sidebar {
+    width: 400px;
+  }
+}
