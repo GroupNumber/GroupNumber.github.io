@@ -19,27 +19,23 @@ const showButton = document.getElementById('show-btn');
 //get function
 async function showData() {
     const displayDataArea = document.getElementById('display-data-area')
-    displayDataArea.innerHTML = `
-    <div id='data-heading' class='data-header'>
-Tasks
-    </div>`
-
     const res = await fetch('http://localhost:8080/todolist');
-
+    const data = await res.json();
     for (let i = 0; i < data.length; i++) {
         displayDataArea.innerHTML += `
-        <form id='data-detail-form'>
+        <form id='data-detail-form' class="open-btn">
             <div id='data-${i}' class='data-field'>
             <div class='id'>${data[i].id}</div>
             <div class="name">${data[i].name}</div>
-            <div class="description">${data[i].description}</div>
             <div class="assigned-to">${data[i].assignedto}</div>
             <div class="due-date">${data[i].duedate}</div>
             <div class="status">${data[i].status}</div>
-            <div class="button update" id="${data[i].id}">UPDATE</div>
-            <div class="button delete" id="${data[i].id}">DELETE</div>
+            <button type="button" class="button update" id="${data[i].id}">UPDATE</button>
+            <button type="button" class="button delete" id="${data[i].id}">DELETE</button>
             </div>
-        </form>`
+        </form>
+        <form id='data-detail-form' class="hidden description-container">
+        <div class="description">${data[i].description}</div></form>`
     }
 
     const updateButtons = document.querySelectorAll('.button.update')
@@ -61,10 +57,10 @@ showButton.addEventListener('click', showData);
 
 
 document.querySelector('#add-btn').addEventListener('click', () => {
-    if (document.querySelector('#data-form').style.display === 'none') {
-        document.querySelector('#data-form').style.display = 'flex'
+    if (document.querySelector('#input-data-area').style.display === 'none') {
+        document.querySelector('#input-data-area').style.display = 'flex'
     } else {
-        document.querySelector('#data-form').style.display = 'none'
+        document.querySelector('#input-data-area').style.display = 'none'
     };
 })
 
@@ -72,14 +68,13 @@ document.querySelector('#add-btn').addEventListener('click', () => {
 document.querySelector('#data-form').addEventListener('submit', async (event) => {
     event.preventDefault();
     const form = event.target
-
     const dataObj = {
-        id: form.id.value,
-        name: form.name.value,
-        description: form.description.value,
-        assignedto: form.assignedto.value,
-        duedate: form.duedate.value,
-        status: form.status.value
+    id: form.id.value,
+    name: form.name.value,
+    description: form.description.value,
+    assignedto: form.assignedto.value,
+    duedate: form.duedate.value,
+    status: form.status.value
     }
 
 
@@ -172,3 +167,17 @@ const deleteItem = async (id) => {
     }
 }
 
+
+//open button
+const openes = document.querySelectorAll('.open-btn')
+const desBoxes = document.querySelectorAll('description-container')
+
+openes.forEach(function (btn) {
+    btn.addEventListener('click', function(){
+        desBoxes.classList.remove('hidden');
+    })
+})
+
+new Calendar({
+    id: '#color-calendar',
+})

@@ -1,166 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap" rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/97796be164.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/97796be164.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/color-calendar/dist/css/theme-basic.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/color-calendar/dist/css/theme-glass.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/color-calendar/dist/bundle.min.js"></script>
+    <link rel="stylesheet" href="./src/css/style-home.css" />
     <title>Home</title>
-</head>
-
-<body>
+  </head>
+  <body>
     <div class="header">
-        <button class="sidebar-toggle">
+      <button class="sidebar-toggle">
         <i class="fas fa-bars"></i>
       </button>
-        <h1>TO DO LISTS</h1>
+      <h1>TO DO LISTS</h1>
     </div>
-    <div class="center-card">
-        <div class="card">
-            <section class="card__header">
-                <h3>Thursday 7th</h3>
-                <h3>January 2020</h3>
-            </section>
-            <section class="card__body">
-                <ul class="card__body--days">
-                    <li>mon</li>
-                    <li>tue</li>
-                    <li>wed</li>
-                    <li>thu</li>
-                    <li>fri</li>
-                    <li>sat</li>
-                    <li>sun</li>
-                </ul>
-                <ul class="card__body--dates">
-                    <li class="prev">30</li>
-                    <li class="prev">31</li>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                    <li>5</li>
-                    <li>6</li>
-                    <li class="active">7</li>
-                    <li>8</li>
-                    <li>9</li>
-                    <li>10</li>
-                    <li>11</li>
-                    <li>12</li>
-                    <li>13</li>
-                    <li>14</li>
-                    <li>15</li>
-                    <li class="circle orange">16 <span>5</span></li>
-                    <li>17</li>
-                    <li>18</li>
-                    <li class="circle purple">19 <span>6</span></li>
-                    <li>20</li>
-                    <li>21</li>
-                    <li>22</li>
-                    <li>23</li>
-                    <li>24</li>
-                    <li>25</li>
-                    <li>26</li>
-                    <li>27</li>
-                    <li>28</li>
-                    <li>29</li>
-                    <li>30</li>
-                    <li>31</li>
-                    <li class="next">1</li>
-                    <li class="next">2</li>
-                </ul>
-            </section>
-            <div class="card__footer">
-                <p>11:35 am</p>
-                <a href="#" class="add">+</a>
-                <p>12<sup>o</sup> C</p>
-            </div>
-        </div>
-        <div id='display-data-area'>
-            <form id='data-detail-form'>
-                <div id='data-${i}' class='data-field'>
-                    <div class='id'>${data[i].id}</div>
-                    <div class="name">${data[i].name}</div>
-                    <div class="description">${data[i].description}</div>
-                    <div class="assigned-to">${data[i].assignedto}</div>
-                    <div class="due-date">${data[i].duedate}</div>
-                    <div class="status">${data[i].status}</div>
-                    <div class="button update" id="${data[i].id}">UPDATE</div>
-                    <div class="button delete" id="${data[i].id}">DELETE</div>
-                </div>
-            </form>
-        </div>
-    </div>
-
     <!-- sidebar -->
     <aside class="sidebar">
-        <div class="sidebar-header">
-            <img src="" alt="" />
-            <button class="close-btn">
+      <div class="sidebar-header">
+        <img src="" alt="" />
+        <button class="close-btn">
           <i class="fas fa-times"></i>
         </button>
-        </div>
-        <!-- sidebar item -->
-        <div class="sidebar-item">
-            <li><a href="http://localhost:8080/"><i class="fas fa-home">HOME</i></a></li>
-            <li><i class="fas fa-exclamation-triangle">IMPORTANT</i></li>
-            <li><i class="fas fa-briefcase">WORK</i></li>
-            <li><i class="fas fa-calendar-week">TODAY</i></li>
-            <button id="show-btn">Show</button>
-            <button id="add-btn">ADD</button>
-        </div>
-        <!-- sign in button -->
-        <ul class="user-button links">
-            <li>
-                <i class="fas fa-sign-in-alt"><a href="#">SIGN IN</a></i>
-            </li>
-            <li>
-                <i class="fas fa-user-circle"><a href="#">LOG IN</a></i>
-            </li>
-        </ul>
+      </div>
+      <!-- sidebar item -->
+      <div class="sidebar-item">
+        <li>
+          <a href="http://localhost:8080/"><i class="fas fa-home">HOME</i></a>
+        </li>
+        <li><i class="fas fa-exclamation-triangle">IMPORTANT</i></li>
+        <li><i class="fas fa-briefcase">WORK</i></li>
+        <li><i class="fas fa-calendar-week">TODAY</i></li>
+        <button id="show-btn">Show</button>
+        <button id="add-btn">ADD</button>
+      </div>
+      <!-- sign in button -->
+      <ul class="user-button links">
+        <li>
+          <i class="fas fa-sign-in-alt"><a href="#">SIGN IN</a></i>
+        </li>
+        <li>
+          <i class="fas fa-user-circle"><a href="#">LOG IN</a></i>
+        </li>
+      </ul>
     </aside>
-
-    <div class='main-body'>
-        <div id='input-data-area'>
-            <form id='data-form' action="http://localhost:8080/" method="POST">
-                <input type="text" name="id" id="id" placeholder="ID" required />
-                <input type="text" name="name" placeholder="Name">
-                <input type="text" name="description" id="description" placeholder="Write down your description" />
-                <label for="assignedto">Assigned to:</label>
-                <select name="assignedto" id="assignedto">
-              <option value="home">Home</option>
-              <option value="school">School</option>
-              <option value="work">Work</option>
-            </select>
-                <label for="duedate">Duedate:</label>
-                <input type="date" name="duedate" id="duedate" />
-                <label for="status">Status:</label>
-                <select name="status" id="status">
-              <option value="todo">TO DO</option>
-              <option value="inprogress">IN PORGRESS</option>
-              <option value="clear">CLEAR</option>
-            </select>
-                <button type="submit">ADD</button>
-            </form>
-        </div>
-        <div id='display-data-area'>
-            <form id='data-detail-form'>
-                <div id='data-${i}' class='data-field'>
-                    <div class='id'>${data[i].id}</div>
-                    <div class="name">${data[i].name}</div>
-                    <div class="description">${data[i].description}</div>
-                    <div class="assigned-to">${data[i].assignedto}</div>
-                    <div class="due-date">${data[i].duedate}</div>
-                    <div class="status">${data[i].status}</div>
-                    <div class="button update" id="${data[i].id}">UPDATE</div>
-                    <div class="button delete" id="${data[i].id}">DELETE</div>
-                </div>
-            </form>
-        </div>
+    <div class="main-body">
+      <div id="input-data-area">
+        <form id="data-form" action="http://localhost:8080/" method="POST">
+          <input type="text" name="name" placeholder="Name" />
+          <input
+            type="text"
+            name="description"
+            id="description"
+            placeholder="Description"
+          />
+          <label for="assignedto">Assigned to:</label>
+          <select name="assignedto" id="assignedto">
+            <option value="home">Home</option>
+            <option value="school">School</option>
+            <option value="work">Work</option>
+          </select>
+          <label for="duedate">Duedate:</label>
+          <input type="date" name="duedate" id="duedate" />
+          <label for="status">Status:</label>
+          <select name="status" id="status">
+            <option value="todo">TO DO</option>
+            <option value="inprogress">IN PORGRESS</option>
+            <option value="clear">CLEAR</option>
+          </select>
+          <button type="submit" id="add-btn">ADD</button>
+        </form>
+      </div>
+      <div class="container">
+        <div id="color-calendar"></div>
+        <div id="display-data-area"></div>
+      </div>
     </div>
+    <footer>copy right to every one</footer>
     <script src="./app.js"></script>
-</body>
-
+  </body>
 </html>
