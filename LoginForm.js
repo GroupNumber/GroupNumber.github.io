@@ -32,13 +32,32 @@ document.addEventListener("DOMContentLoaded", () => {
         createAccountForm.classList.add("form--hidden");
     });
 
-    loginForm.addEventListener("submit", e => {
+    loginForm.addEventListener("submit", async e => {
         e.preventDefault();
+        e.currentTarget.username
+        e.currentTarget.password
+        console.log(e.currentTarget.username.value)
 
-        //ADD Fetch//
+        const dataObj = {
+            username: e.currentTarget.username,
+            password: e.currentTarget.password
+        }
+
+        const res = await fetch('/user/login', {
+            method: 'post',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(dataObj)
+        })
+
+        const data = await res.json()
+        console.log(data)
+
 
         setFormMessage(loginForm, "error", "Invalid username/password combination");
     });
+
 
     document.querySelectorAll(".form__input").forEach(inputElement => {
         inputElement.addEventListener("blur", e => {
