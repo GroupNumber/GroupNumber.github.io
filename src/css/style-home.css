@@ -26,11 +26,12 @@ body {
 }
 
 form {
-  margin-top: 2rem;
-  min-height: 10vh;
+  margin-top: 1.5rem;
+  min-height: 8vh;
   display: flex;
   justify-content: center;
   align-content: space-between;
+  align-items: center;
 }
 
 form input,
@@ -39,19 +40,16 @@ select {
   padding: 0.5rem;
   font-size: 2rem;
   border: none;
-  background: rgb(140, 140, 184);
-  box-shadow: currentColor;
+  background: rgb(236, 236, 236);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
 }
 
 form button {
   margin-left: 10px;
-  border-radius: 50%;
   color: cornflowerblue;
-  background: white;
   cursor: pointer;
-  transition: all 0.3 ease;
   border: none;
-  padding: 5px;
+  align-self: flex-end;
 }
 
 form button:hover {
@@ -159,10 +157,11 @@ a {
 
 .sidebar {
   position: fixed;
-  top: 0;
+  top: 5rem;
   left: 0;
   width: 100%;
-  height: 100%;
+  min-height: 80%;
+  height: auto;
   background: #fff;
   display: flex;
   justify-content: space-between;
@@ -183,11 +182,17 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  text-align: center;
+  align-items: center;
 }
 
 .data-field div {
   width: 100px;
-  height: 60px;
+  min-height: 20px;
+}
+
+.data-field div.due-date {
+  min-width: 120px;
 }
 
 .data-header div {
@@ -201,11 +206,8 @@ a {
   width: 100%;
 }
 
-#data-heading {
-  width: auto;
-  height: 20px;
-  text-align: center;
-  background: rgba(243, 225, 225, 0.493);
+.description-container {
+  display: none;
 }
 
 #update-form {
@@ -235,17 +237,14 @@ a {
   width: 70%;
   position: relative;
   top: 5rem;
+  margin: 0 40px 0 20px;
 }
 
 #data-detail-form {
   padding: 1rem;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   font-size: larger;
-  letter-spacing: 2px;
-}
-
-.hidden {
-  display: none;
+  letter-spacing: 1px;
 }
 
 .show-text {
@@ -268,9 +267,8 @@ a {
 footer {
   width: 100%;
   height: 5rem;
-  background-color: cadetblue;
+  background-color: rgb(121, 213, 216);
   position: fixed;
-  text-align: center;
   bottom: 0px;
 }
 

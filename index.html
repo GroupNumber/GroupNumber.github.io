@@ -34,19 +34,23 @@
     <!-- sidebar -->
     <aside class="sidebar">
       <div class="sidebar-header">
-        <img src="" alt="" />
+        <img
+          src="./ps_marisa-lerin_103813_list-header-to-do_pu.png"
+          alt="logo"
+        />
         <button class="close-btn">
           <i class="fas fa-times"></i>
         </button>
       </div>
       <!-- sidebar item -->
       <div class="sidebar-item">
-        <li>
-          <a href="http://localhost:8080/"><i class="fas fa-home">HOME</i></a>
+        <li id="home-btn"><i class="fas fa-home">HOME</i></li>
+        <li id="important-btn">
+          <i class="fas fa-exclamation-triangle">IMPORTANT</i>
         </li>
-        <li><i class="fas fa-exclamation-triangle">IMPORTANT</i></li>
-        <li><i class="fas fa-briefcase">WORK</i></li>
-        <li><i class="fas fa-calendar-week">TODAY</i></li>
+        <li id="work-btn"><i class="fas fa-briefcase">WORK</i></li>
+        <li id="school-btn"><i class="fas fa-school">School</i></li>
+        <li id="today-btn"><i class="fas fa-calendar-week">TODAY</i></li>
         <button id="show-btn">Show</button>
         <button id="add-btn">ADD</button>
       </div>
@@ -75,6 +79,7 @@
             <option value="home">Home</option>
             <option value="school">School</option>
             <option value="work">Work</option>
+            <option value="important">Important</option>
           </select>
           <label for="duedate">Duedate:</label>
           <input type="date" name="duedate" id="duedate" />
@@ -92,7 +97,7 @@
         <div id="display-data-area"></div>
       </div>
     </div>
-    <footer>copy right to every one</footer>
+    <footer>©2021 Alex, Lemon, Hong Kong.All rights reserved.</footer>
     <script src="./app.js"></script>
   </body>
 </html>
