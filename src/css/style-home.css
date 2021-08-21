@@ -25,7 +25,9 @@ body {
   z-index: 10;
 }
 
-form {
+form,
+#display-data-area #deleteditem,
+#display-data-area .updated-item {
   margin-top: 1.5rem;
   min-height: 8vh;
   display: flex;
@@ -57,7 +59,9 @@ form button:hover {
   color: white;
 }
 
-form#data-detail-form {
+form#data-detail-form,
+#display-data-area #deleteditem,
+#display-data-area .updated-item {
   width: 100%;
   border: solid whitesmoke 2px;
   border-radius: 1rem;
@@ -245,6 +249,10 @@ a {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   font-size: larger;
   letter-spacing: 1px;
+}
+
+#input-data-area #data-form {
+  align-items: unset;
 }
 
 .show-text {

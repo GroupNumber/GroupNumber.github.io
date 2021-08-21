@@ -89,27 +89,65 @@ schoolBtn.addEventListener("click", async () => {
     }
   }
 });
-//get function
-async function showData() {
-  //   const displayDataArea = document.getElementById("display-data-area");
+//Today btn
+function getFixMonth(month) {
+  if (month < 10) {
+    return (month = `0${month}`);
+  }
+}
+const todayBtn = document.getElementById("today-btn");
+let date = new Date();
+let day = date.getDate();
+let month = getFixMonth(date.getMonth() + 1);
+let year = date.getFullYear();
+let today = `${year}-${month}-${day}`;
+todayBtn.addEventListener("click", async () => {
   const res = await fetch("http://localhost:8080/todolist");
   const data = await res.json();
   for (let i = 0; i < data.length; i++) {
-    displayDataArea.innerHTML += `
-        <form id='data-detail-form'>
-        <div id='data-${i}' class='data-field'>
-        <div class='id'>${data[i].id}</div>
-        <div class="name">${data[i].name}</div>
-        <div class="assigned-to">${data[i].assignedto}</div>
-        <div class="due-date">${data[i].duedate}</div>
-        <div class="status">${data[i].status}</div>
-            <button type="button" class="button update" id="${data[i].id}"><i class="fas fa-edit"></i></button>
-            <button type="button" class="button delete" id="${data[i].id}"><i class="far fa-trash-alt"></i></button>
-            <button type="button" class="button plus" id="${data[i].id}"><i class="far fa-plus-square"></i></button>
-            </div>
-        </form>
-        <form id='data-detail-form' class="description-container">
-        <div class="description">${data[i].description}</div></form>`;
+    if (data[i].duedate === today) {
+      displayDataArea.innerHTML = `
+            <form id='data-detail-form'>
+            <div id='data-${i}' class='data-field'>
+            <div class='id'>${data[i].id}</div>
+            <div class="name">${data[i].name}</div>
+            <div class="assigned-to">${data[i].assignedto}</div>
+            <div class="due-date">${data[i].duedate}</div>
+            <div class="status">${data[i].status}</div>
+                <button type="button" class="button update" id="${data[i].id}"><i class="fas fa-edit"></i></button>
+                <button type="button" class="button delete" id="${data[i].id}"><i class="far fa-trash-alt"></i></button>
+                <button type="button" class="button plus" id="${data[i].id}"><i class="far fa-plus-square"></i></button>
+                </div>
+            </form>
+            <form id='data-detail-form' class="description-container">
+            <div class="description">${data[i].description}</div></form>`;
+    }
+  }
+});
+//get function
+let show = false;
+async function showData() {
+  const res = await fetch("http://localhost:8080/todolist");
+  const data = await res.json();
+  if (!show) {
+    for (let i = 0; i < data.length; i++) {
+      displayDataArea.innerHTML += `
+          <form id='data-detail-form'>
+          <div id='data-${i}' class='data-field'>
+          <div class='id'>${data[i].id}</div>
+          <div class="name">${data[i].name}</div>
+          <div class="assigned-to">${data[i].assignedto}</div>
+          <div class="due-date">${data[i].duedate}</div>
+          <div class="status">${data[i].status}</div>
+              <button type="button" class="button update ${data[i].id}" id="${data[i].id}"><i class="fas fa-edit"></i></button>
+              <button type="button" class="button delete ${data[i].id}" id="${data[i].id}"><i class="far fa-trash-alt"></i></button>
+              <button type="button" class="button plus ${data[i].id}" id="${data[i].id}"><i class="far fa-plus-square"></i></button>
+              </div>
+          </form>
+          <form id='data-detail-form' class="description-container ${data[i].id}">
+          <div class="description ">${data[i].description}</div></form>`;
+    }
+    show = true;
   }
   //open button
 
@@ -119,7 +157,9 @@ async function showData() {
     if (btn.classList.contains("plus")) {
       btn.addEventListener("click", function () {
         descriptiones.forEach(function (description) {
-          description.classList.toggle("show-text");
+          if (description.classList.contains(btn.id)) {
+            description.classList.toggle("show-text");
+          }
         });
       });
     }
@@ -176,8 +216,9 @@ document
     });
     if (res.ok) {
       console.log(await res.json());
-      // showData()
     }
+    document.querySelector("#input-data-area").style.display = "none";
+    show();
   });
 
 //update function
@@ -212,6 +253,7 @@ const updateItem = async (id) => {
     updatedItem.status = event.target.status.value;
     performUpdate(updatedItem);
   });
+  show = false;
 };
 
 const performUpdate = async (data) => {
@@ -231,15 +273,15 @@ const performUpdate = async (data) => {
   });
   if (res.ok) {
     document.querySelector("#display-data-area").innerHTML = `
-        <div>Item ${data.id} is updated</div>
-        <div id='data-${data.id}' class='data-field'>
-        <div class='id'>ID: ${data.id}</div>
-        <div class="name">Name: ${data.name}</div>
-        <div class="description">Description: ${data.description}</div>
-        <div class="assigned-to">Assigned To: ${data.assignedto}</div>
-        <div class="due-date">DUE Date: ${data.duedate}</div>
-        <div class="status">Status: ${data.status}</div>
-        </div>
+          <div>Item ${data.id} is updated</div>
+          <div id='data-${data.id}' class='data-field updated-item'>
+          <div class='id'>ID: ${data.id}</div>
+          <div class="name">Name: ${data.name}</div>
+          <div class="description">Description: ${data.description}</div>
+          <div class="assigned-to">Assigned To: ${data.assignedto}</div>
+          <div class="due-date">DUE Date: ${data.duedate}</div>
+          <div class="status">Status: ${data.status}</div>
+          </div>
         `;
   }
 };
@@ -252,8 +294,9 @@ const deleteItem = async (id) => {
   const res = await fetch(url, setting);
   if (res.ok) {
     document.querySelector("#display-data-area").innerHTML =
-      "<div> item: " + id + " is deleted.</div>";
+      "<div id='deleteditem'> item: " + id + " is deleted.</div>";
   }
+  show = false;
 };
 
 //Calendar
