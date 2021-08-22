@@ -133,3 +133,7 @@ header {
 .form__link:hover {
     text-decoration: underline;
 }
+
+.form_back {
+    text-align: center;
+}
