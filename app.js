@@ -93,6 +93,8 @@ schoolBtn.addEventListener("click", async () => {
 function getFixMonth(month) {
   if (month < 10) {
     return (month = `0${month}`);
+  } else {
+    return month;
   }
 }
 const todayBtn = document.getElementById("today-btn");
@@ -302,4 +304,13 @@ const deleteItem = async (id) => {
 //Calendar
 new Calendar({
   id: "#color-calendar",
+  calendarSize: "large",
+  primaryColor: "#04AFDF",
+  theme: "glass",
+  border: "7px solid #04AFDF",
+  weekdayType: "long-upper",
+  dateChanged: (currentday, events) => {
+    let displayDataArea = "";
+    console.log(currentday, events);
+  },
 });
