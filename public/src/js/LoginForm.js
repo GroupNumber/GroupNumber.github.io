@@ -34,32 +34,47 @@ document.addEventListener("DOMContentLoaded", () => {
 
     loginForm.addEventListener("submit", async e => {
         e.preventDefault();
-        e.currentTarget.username
-        e.currentTarget.password
+        // e.currentTarget.username
+        // e.currentTarget.password
         console.log(e.currentTarget.username.value)
 
         const dataObj = {
-            username: e.currentTarget.username,
-            password: e.currentTarget.password
+            username: e.currentTarget.username.value,
+            password: e.currentTarget.password.value
         }
 
-        const res = await fetch('/user/login', {
-            method: 'post',
+        const res = await fetch('http://localhost:8080/user/login', {
+            method: 'POST',
             headers: {
-                'content-type': 'application/json'
+                "Content-Type": "application/json"
             },
             body: JSON.stringify(dataObj)
         })
 
-        const data = await res.json()
-        console.log(data)
+        if (res.ok) {
+            console.log('logined')
+            window.location.href = 'http://localhost:8080/index.html';
+            //            res.redirected('http://localhost:8080/index.html')
+        } else {
+            console.log('login failed')
+        }
+        //        const data = await res.json()
+        //        console.log(data)
 
 
 
 
 
-        setFormMessage(loginForm, "error", "Invalid username/password combination");
+        //        setFormMessage(loginForm, "error", "Invalid username/password combination");
+
+        //        if (setFormMessage) {
+
+        //        }
+
+
+
     });
+
 
 
     document.querySelectorAll(".form__input").forEach(inputElement => {
