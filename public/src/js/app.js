@@ -39,10 +39,39 @@ workBtn.addEventListener("click", async () => {
             <button type="button" class="button plus" id="${data[i].id}"><i class="far fa-plus-square"></i></button>
             </div>
         </form>
-        <form id='data-detail-form' class="description-container">
+        <form id='data-detail-form' class="description-container ${data[i].id}">
         <div class="description">${data[i].description}</div></form>`;
     }
   }
+     //openBtn
+     const openes = document.querySelectorAll(".button");
+     const descriptiones = document.querySelectorAll(".description-container");
+     openes.forEach(function (btn) {
+       if (btn.classList.contains("plus")) {
+         btn.addEventListener("click", function () {
+           console.log('this is openbtn')
+           descriptiones.forEach((description) => {
+             if (description.classList.contains(btn.id)) {
+               description.classList.toggle("show-text");
+             }
+           });
+         });
+       }
+     });
+    //updateBtn
+    const updateButtons = document.querySelectorAll(".button.update");
+    for (let updateButton of updateButtons) {
+      updateButton.addEventListener("click", () => {
+        updateItem(updateButton.id);
+      });
+    }
+    //deleteBtn
+    const deleteButtons = document.querySelectorAll(".button.delete");
+    for (let deleteButton of deleteButtons) {
+      deleteButton.addEventListener("click", () => {
+        deleteItem(deleteButton.id);
+      });
+    }
 });
 //Home btn
 const homeBtn = document.getElementById("home-btn");
@@ -64,10 +93,39 @@ homeBtn.addEventListener("click", async () => {
             <button type="button" class="button plus" id="${data[i].id}"><i class="far fa-plus-square"></i></button>
             </div>
         </form>
-        <form id='data-detail-form' class="description-container">
+        <form id='data-detail-form' class="description-container ${data[i].id}">
         <div class="description">${data[i].description}</div></form>`;
     }
   }
+     //openBtn
+     const openes = document.querySelectorAll(".button");
+     const descriptiones = document.querySelectorAll(".description-container");
+     openes.forEach(function (btn) {
+       if (btn.classList.contains("plus")) {
+         btn.addEventListener("click", function () {
+           console.log('this is openbtn')
+           descriptiones.forEach((description) => {
+             if (description.classList.contains(btn.id)) {
+               description.classList.toggle("show-text");
+             }
+           });
+         });
+       }
+     });
+    //updateBtn
+    const updateButtons = document.querySelectorAll(".button.update");
+    for (let updateButton of updateButtons) {
+      updateButton.addEventListener("click", () => {
+        updateItem(updateButton.id);
+      });
+    }
+    //deleteBtn
+    const deleteButtons = document.querySelectorAll(".button.delete");
+    for (let deleteButton of deleteButtons) {
+      deleteButton.addEventListener("click", () => {
+        deleteItem(deleteButton.id);
+      });
+    }
 });
 //School btn
 const schoolBtn = document.getElementById("school-btn");
@@ -89,27 +147,45 @@ schoolBtn.addEventListener("click", async () => {
             <button type="button" class="button plus" id="${data[i].id}"><i class="far fa-plus-square"></i></button>
             </div>
         </form>
-        <form id='data-detail-form' class="description-container">
+        <form id='data-detail-form' class="description-container ${data[i].id}">
         <div class="description">${data[i].description}</div></form>`;
     }
   }
-});
-//Today btn
-function getFixMonth(month) {
-  if (month < 10) {
-    return (month = `0${month}`);
-  } else {
-    return month;
+   //openBtn
+  const openes = document.querySelectorAll(".button");
+  const descriptiones = document.querySelectorAll(".description-container");
+  openes.forEach(function (btn) {
+    if (btn.classList.contains("plus")) {
+      btn.addEventListener("click", function () {
+        console.log('this is openbtn')
+        descriptiones.forEach((description) => {
+          if (description.classList.contains(btn.id)) {
+            description.classList.toggle("show-text");
+          }
+        });
+      });
+    }
+  });
+  //updateBtn
+  const updateButtons = document.querySelectorAll(".button.update");
+  for (let updateButton of updateButtons) {
+    updateButton.addEventListener("click", () => {
+      updateItem(updateButton.id);
+    });
   }
-}
-const todayBtn = document.getElementById("today-btn");
-let date = new Date();
-let day = date.getDate();
-let month = getFixMonth(date.getMonth() + 1);
-let year = date.getFullYear();
-let today = `${year}-${month}-${day}`;
+  //deleteBtn
+  const deleteButtons = document.querySelectorAll(".button.delete");
+  for (let deleteButton of deleteButtons) {
+    deleteButton.addEventListener("click", () => {
+      deleteItem(deleteButton.id);
+    });
+  }
+
+});
 
 async function getTodolistByDate(formattedDate){
+  // console.log(formattedDate);
+  displayDataArea.innerHTML = "";
   const res = await fetch("http://localhost:8080/todolist");
   const data = await res.json();
   for (let i = 0; i < data.length; i++) {
@@ -127,19 +203,48 @@ async function getTodolistByDate(formattedDate){
                 <button type="button" class="button plus" id="${data[i].id}"><i class="far fa-plus-square"></i></button>
                 </div>
             </form>
-            <form id='data-detail-form' class="description-container">
+            <form id='data-detail-form' class="description-container ${data[i].id}">
             <div class="description">${data[i].description}</div></form>`;
     }
   }
+     //openBtn
+     const openes = document.querySelectorAll(".button");
+     const descriptiones = document.querySelectorAll(".description-container");
+     openes.forEach(function (btn) {
+       if (btn.classList.contains("plus")) {
+         btn.addEventListener("click", function () {
+           console.log('this is openbtn')
+           descriptiones.forEach((description) => {
+             if (description.classList.contains(btn.id)) {
+               description.classList.toggle("show-text");
+             }
+           });
+         });
+       }
+     });
+    //updateBtn
+    const updateButtons = document.querySelectorAll(".button.update");
+    for (let updateButton of updateButtons) {
+      updateButton.addEventListener("click", () => {
+        updateItem(updateButton.id);
+      });
+    }
+    //deleteBtn
+    const deleteButtons = document.querySelectorAll(".button.delete");
+    for (let deleteButton of deleteButtons) {
+      deleteButton.addEventListener("click", () => {
+        deleteItem(deleteButton.id);
+      });
+    }
 }
 
-todayBtn.addEventListener("click", getTodolistByDate(today));
+
 
 //get function
 async function showData() {
+  displayDataArea.innerHTML = '';
   const res = await fetch("http://localhost:8080/todolist");
   const data = await res.json();
-  displayDataArea.innerHTML = ''
     for (let i = 0; i < data.length; i++) {
       displayDataArea.innerHTML += `
           <form id='data-detail-form'>
@@ -332,3 +437,15 @@ new Calendar({
     getTodolistByDate(formatDate(currentday));
   },
 });
+
+const todayBtn = document.getElementById("today-btn");
+let today = new Date();
+// let day = date.getDate();
+// let month = getFixMonth(date.getMonth() + 1);
+// let year = date.getFullYear();
+// // let today = `${year}-${month}-${day}`;
+todayBtn.addEventListener("click", 
+  ()=>{
+    getTodolistByDate(formatDate(today))
+  }) 
+// getTodolistByDate(formatDate(today)));
