@@ -57,6 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
             //            res.redirected('http://localhost:8080/index.html')
         } else {
             console.log('login failed')
+            setFormMessage(loginForm, "error", "Invalid username/password combination");
         }
         //        const data = await res.json()
         //        console.log(data)
