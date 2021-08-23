@@ -3,6 +3,10 @@ const toggleBtn = document.querySelector(".sidebar-toggle");
 const closeBtn = document.querySelector(".close-btn");
 const sidebar = document.querySelector(".sidebar");
 
+sidebar.addEventListener("click", () => {
+  sidebar.classList.toggle("show-sidebar");
+})
+
 toggleBtn.addEventListener("click", () => {
   sidebar.classList.toggle("show-sidebar");
 });
@@ -14,6 +18,7 @@ closeBtn.addEventListener("click", () => {
 //selecter
 const showButton = document.getElementById("show-btn");
 const displayDataArea = document.getElementById("display-data-area");
+
 //Work btn
 const workBtn = document.getElementById("work-btn");
 workBtn.addEventListener("click", async () => {
@@ -103,12 +108,13 @@ let day = date.getDate();
 let month = getFixMonth(date.getMonth() + 1);
 let year = date.getFullYear();
 let today = `${year}-${month}-${day}`;
-todayBtn.addEventListener("click", async () => {
+
+async function getTodolistByDate(formattedDate){
   const res = await fetch("http://localhost:8080/todolist");
   const data = await res.json();
   for (let i = 0; i < data.length; i++) {
-    if (data[i].duedate === today) {
-      displayDataArea.innerHTML = `
+    if (data[i].duedate === formattedDate) {
+      displayDataArea.innerHTML += `
             <form id='data-detail-form'>
             <div id='data-${i}' class='data-field'>
             <div class='id'>${data[i].id}</div>
@@ -125,13 +131,15 @@ todayBtn.addEventListener("click", async () => {
             <div class="description">${data[i].description}</div></form>`;
     }
   }
-});
+}
+
+todayBtn.addEventListener("click", getTodolistByDate(today));
+
 //get function
-let show = false;
 async function showData() {
   const res = await fetch("http://localhost:8080/todolist");
   const data = await res.json();
-  if (!show) {
+  displayDataArea.innerHTML = ''
     for (let i = 0; i < data.length; i++) {
       displayDataArea.innerHTML += `
           <form id='data-detail-form'>
@@ -149,8 +157,6 @@ async function showData() {
           <form id='data-detail-form' class="description-container ${data[i].id}">
           <div class="description ">${data[i].description}</div></form>`;
     }
-    show = true;
-  }
   //open button
 
   const openes = document.querySelectorAll(".button");
@@ -220,7 +226,6 @@ document
       console.log(await res.json());
     }
     document.querySelector("#input-data-area").style.display = "none";
-    show();
   });
 
 //update function
@@ -255,7 +260,6 @@ const updateItem = async (id) => {
     updatedItem.status = event.target.status.value;
     performUpdate(updatedItem);
   });
-  show = false;
 };
 
 const performUpdate = async (data) => {
@@ -298,19 +302,33 @@ const deleteItem = async (id) => {
     document.querySelector("#display-data-area").innerHTML =
       "<div id='deleteditem'> item: " + id + " is deleted.</div>";
   }
-  show = false;
 };
 
+// format date to yyyy-mm-dd
+function formatDate(date) {
+  var d = new Date(date),
+      month = '' + (d.getMonth() + 1),
+      day = '' + d.getDate(),
+      year = d.getFullYear();
+
+  if (month.length < 2) 
+      month = '0' + month;
+  if (day.length < 2) 
+      day = '0' + day;
+
+  return [year, month, day].join('-');
+}
 //Calendar
 new Calendar({
   id: "#color-calendar",
   calendarSize: "large",
   primaryColor: "#04AFDF",
+  headerBackgroundColor: "#04AFDF",
   theme: "glass",
   border: "7px solid #04AFDF",
   weekdayType: "long-upper",
-  dateChanged: (currentday, events) => {
-    let displayDataArea = "";
-    console.log(currentday, events);
+  dateChanged: (currentday) => {
+    displayDataArea.innerHTML = "";
+    getTodolistByDate(formatDate(currentday));
   },
 });
