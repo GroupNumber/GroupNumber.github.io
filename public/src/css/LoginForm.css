@@ -137,3 +137,7 @@ header {
 .form_back {
     text-align: center;
 }
+
+a {
+    text-decoration: none;
+}
