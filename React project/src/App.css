@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+  background: hsl(212, 33%, 89%);
+  color: black;
+  line-height: 1.5;
+  font-size: 0.875rem;
+}
+
+.area {
+  display: flex;
+}
+
+.react-calendar {
+  background-color: cornflowerblue;
+  height: 45rem;
+  padding: 20px;
+  position: relative;
+  top: 80px;
+  flex: 3;
+}
+
+.lists {
+  width: 60%;
+  height: 60%;
+  position: relative;
+  top: 8rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex: 6;
+}
+
+.lists .task-container {
+  min-height: 13rem;
+  min-width: 40rem;
+  margin: 10px;
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 5px 7px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.task-container .task-item {
+  width: 100%;
+  height: fit-content;
+  min-width: 600px;
+  padding: 5px;
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-item h3,
+.task-item h2,
+.task-item p {
+  padding: 5px;
+  margin: 5px;
+}
+
+.task-item h2 {
+  flex: 6;
+  font-size: 1rem;
+}
+
+.task-item h3 {
+  flex: 2;
+}
+
+.task-item .id {
+  font-size: 2rem;
+  flex: 1;
+}
+
+.task-item .name {
+  font-size: 1.5rem;
+  margin: 0 20px 0 0;
+}
+
+.taskBtn-container {
+  margin-left: 10px;
+}
+
+.taskBtn {
+  border-radius: 30px;
+}
+
+.name-title {
+  font-size: 1rem;
+}
+
+
+@media only screen and (min-width: 1300px) {
+  .lists {
+    top: 0px;
+  }
+}
