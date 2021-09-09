@@ -6,6 +6,7 @@ const Signin = () => {
   const [newUserName, setUserName] = useState("");
   const [newPassword, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
+  const [message, setMessage] = useState('');
 
   function validateForm() {
     return (
@@ -17,6 +18,7 @@ const Signin = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    setMessage('');
     const dataObj = {
       username: newUserName,
       password: newPassword,
@@ -34,6 +36,7 @@ const Signin = () => {
       setUsers([...users, dataObj]);
       window.location.href = "http://localhost:3000";
     } else {
+      setMessage('Signin failed')
       console.log("failed");
     }
   }
@@ -84,7 +87,7 @@ const Signin = () => {
             placeholder="Confirm password"
             onChange={(e) => setRepeatPassword(e.target.value)}
           />
-          <div className="form__input-error-message"></div>
+          <div className="form__input-error-message">{message}</div>
         </div>
         <button className="form__button" type="submit" disabled={!validateForm()}>
           Continue

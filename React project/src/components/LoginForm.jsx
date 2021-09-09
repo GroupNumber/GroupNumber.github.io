@@ -10,8 +10,8 @@ const LoginForm = () => {
     e.preventDefault();
     setMessage('')
     const dataObj = {
-      username: e.currentTarget.username.value,
-      password: e.currentTarget.password.value,
+      username: userName,
+      password: password,
     };
 
     const res = await fetch("http://localhost:8080/user/login", {
@@ -22,7 +22,6 @@ const LoginForm = () => {
       body: JSON.stringify(dataObj),
     });
     if (res.ok) {
-      console.log("logined");
       setUserName('');
       setPassword('');
       window.location.href = "http://localhost:3000";
