@@ -118,21 +118,16 @@ function App() {
           </div>
         </div>
       ) : (
-        <div
+        <h1
           className="area"
           style={{
             position: "relative",
             top: "13rem",
             justifyContent: "center",
-            fontFamily: '"Roboto Slab"',
-            background: 'hsl(212, 33%, 89%)',
-            color: 'black',
-            lineHeight: '1.5',
-            fontSize: '0.875rem',
           }}
         >
           Please login to assess the tasks
-        </div>
+        </h1>
       )}
     </div>
   );

@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "./Button";
-import ShowBtn from "./ShowBtn";
 import styles from "./styles/Navbar.module.css";
 import { Link } from "react-router-dom";
 const Navbar = ({ sideBar, setShowForm }) => {
