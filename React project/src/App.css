@@ -14,6 +14,7 @@ body {
 
 .area {
   display: flex;
+  justify-content: flex-end;
 }
 
 .react-calendar {
@@ -26,6 +27,7 @@ body {
 }
 
 .lists {
+  max-width: 70%;
   width: 60%;
   height: 60%;
   position: relative;
