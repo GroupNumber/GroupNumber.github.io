@@ -5,7 +5,7 @@ import ToggleBtn from './ToggleBtn'
 import DateTime from './DateTime'
 
 const Header = ({showSidebar}) => {
-    // let time = new Date.toLocaleString(); 
+
 
     return (
         <div className={styles.header}>

@@ -26,7 +26,7 @@ const LoginForm = () => {
       setPassword('');
       window.location.href = "http://localhost:3000";
     } else {
-      setMessage('Login in failed')
+      setMessage('Login failed')
     }
   }
 
