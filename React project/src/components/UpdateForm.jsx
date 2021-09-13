@@ -9,7 +9,6 @@ const UpdateForm = ({ showForm, setTasks }) => {
     formState: { errors },
   } = useForm();
   const onSubmit = async (data) => {
-    console.log(data);
     const formObj = {
       id: data.id,
       name: data.name,
@@ -25,11 +24,9 @@ const UpdateForm = ({ showForm, setTasks }) => {
       },
       body: JSON.stringify(formObj),
     });
-    const message = await res.json();
     if (res.status === 200) {
       setTasks((tasks) => [...tasks, formObj]);
     } else {
-      console.log(message);
       console.log(errors);
     }
   };
